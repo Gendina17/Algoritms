@@ -1,0 +1,3 @@
+/home/nina/CLionProjects/task_5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nina/CLionProjects/task_5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nina/CLionProjects/task_5/cmake-build-debug/CMakeFiles/task_5.dir
