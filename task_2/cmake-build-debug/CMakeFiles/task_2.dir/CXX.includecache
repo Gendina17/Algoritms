@@ -6,9 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/nina/CLionProjects/task_2/main.cpp
+/home/nina/учеба/технопарк/algANDstr/task_2/main.cpp
 iostream
 -
 cmath
+-
+iostream
+-
+cmath
+-
+iostream
+-
+cmath
+-
+iostream
 -
 

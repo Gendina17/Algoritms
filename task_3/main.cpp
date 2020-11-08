@@ -1,5 +1,9 @@
 #include <iostream>
 #include <cassert>
+#include <string.h>
+
+/*Реализовать очередь с помощью двух стеков. Использовать стек,
+реализованный с помощью динамического буфера.*/
 
 template <class T>
 class Stack{
@@ -8,7 +12,7 @@ private:
     int length;
     T *mass;
 public:
-    virtual ~Stack() {     //вило трех, как там
+    virtual ~Stack() {
         delete [] mass;
 
     }
@@ -27,11 +31,9 @@ public:
 template <class T>
 void Stack<T>::push_back(const T& element) {
     if (current_size==length){
-        length*=2;
+        length*=4;
         int *help_mass = new T[length];
-        for(int i=0; i<current_size; i++){
-            help_mass[i]=mass[i];
-        }
+        memcpy (help_mass, mass, current_size);
         mass=help_mass;
         delete [] help_mass;
     }
@@ -58,10 +60,10 @@ public:
         delete s2;
     }
 
-    Queue() {
-        s1 = new Stack<T>(10);
-        s2 = new Stack<T>(10);
-}
+    Queue(int count) {
+        s1 = new Stack<T>(count);
+        s2 = new Stack<T>(count);
+    }
     Queue(const Queue &q)=delete;
     Queue& operator = (const Queue &q) = delete;
     void push_back(const T &element);
@@ -79,7 +81,7 @@ T Queue<T>::pop_front() {
     if ((element=s2->pop_back()) != -1)
         return element;
     else
-        {
+    {
         while ((element=s1->pop_back()) != -1) {
             s2->push_back(element);
         }
@@ -88,15 +90,13 @@ T Queue<T>::pop_front() {
 }
 
 void run (std::istream &input, std::ostream &output){
-    Queue<int> queue;
     int count=0;
-    output<<"Input count of command:  ";
     input>>count;
+    Queue<int> queue(count);
     bool result= true;
     for(int i=0; i<count; i++){
         int command=0;
         int value=0;
-        output<<"Input command and value";
         input>>command>>value;
         switch (command) {
             case 2:

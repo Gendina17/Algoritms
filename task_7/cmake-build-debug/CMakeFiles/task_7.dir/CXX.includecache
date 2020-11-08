@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/nina/CLionProjects/task_5/main.cpp
+/home/nina/CLionProjects/task_7/main.cpp
 iostream
 -
 cstring
+-
+assert.h
 -
 

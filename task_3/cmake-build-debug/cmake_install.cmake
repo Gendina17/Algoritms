@@ -1,4 +1,4 @@
-# Install script for directory: /home/nina/CLionProjects/task_3
+# Install script for directory: /home/nina/учеба/технопарк/algANDstr/task_3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/nina/CLionProjects/task_3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/nina/учеба/технопарк/algANDstr/task_3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

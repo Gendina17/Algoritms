@@ -1,5 +1,10 @@
 #include <iostream>
 #include <cstring>
+
+/*На числовой прямой окрасили N отрезков.
+Известны координаты левого и правого концов каждого отрезка [Li, Ri].
+Найти длину окрашенной части числовой прямой. */
+
 struct line{
     int l;
     int r;
@@ -62,25 +67,23 @@ int length_search(line* mass, int massLen ){
             length+=mass[i].r-r_current;
             r_current=mass[i].r;
         } else
-            if(mass[i].l>=r_current){
-                length+=mass[i].r-mass[i].l;
-                r_current=mass[i].r;
-            }
+        if(mass[i].l>=r_current){
+            length+=mass[i].r-mass[i].l;
+            r_current=mass[i].r;
+        }
     }
     return length;
 }
 
 int main() {
-int count;
-std::cout<<"Enter the number of line: ";
-std::cin>>count;
-line *mass=new line[count];
-for(int i=0;i<count;i++ ){
-    std::cout<<"Enter the left and right border:  ";
-    std::cin>>mass[i].l>>mass[i].r;
-}
-MergeSort(mass, count);
-std::cout<<length_search(mass, count);
-delete [] mass;
-return 0;
+    int count;
+    std::cin>>count;
+    line *mass=new line[count];
+    for(int i=0;i<count;i++ ){
+        std::cin>>mass[i].l>>mass[i].r;
+    }
+    MergeSort(mass, count);
+    std::cout<<length_search(mass, count);
+    delete [] mass;
+    return 0;
 }

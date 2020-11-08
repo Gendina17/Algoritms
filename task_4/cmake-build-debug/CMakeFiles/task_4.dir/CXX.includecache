@@ -6,9 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/nina/CLionProjects/task_3/main.cpp
+/home/nina/CLionProjects/task_4/main.cpp
 iostream
 -
+cstring
+-
 cassert
+-
+algorithm
+-
+cassert
+-
+iostream
 -
 
